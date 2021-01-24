@@ -54,7 +54,34 @@ app.post('/restaurants', (req, res) => {
     .catch(error => console.log(error))
 })
 
+
 // routes setting - Update
+//get edit page
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('edit', { restaurant }))
+    .catch(error => console.log(error))
+})
+//put value back
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then((restaurant) => {
+      restaurant.name = req.body.name
+      restaurant.category = req.body.category
+      restaurant.image = req.body.image
+      restaurant.loction = req.body.location
+      restaurant.phone = req.body.phone
+      restaurant.rating = req.body.rating
+      restaurant.google_map = req.body.google_map
+      restaurant.description = req.body.description
+      return restaurant.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
+})
 
 // routes setting - Delete
 app.post('/restaurants/:id/delete', (req, res) => {
@@ -77,7 +104,6 @@ app.get('/restaurants/:id', (req, res) => {
 // search-bar
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  console.log(keyword)
   Restaurant.find({
     $or: [
       { name: new RegExp(keyword, 'i') },
