@@ -117,5 +117,5 @@ app.get('/search', (req, res) => {
 
 // start and listen on the Express server
 app.listen(port, () => {
-  console.log(`Express is listening `)
+  console.log(`Express is listening on http://localhost:${port}`)
 })
