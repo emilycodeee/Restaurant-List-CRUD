@@ -40,11 +40,20 @@
               <span class="badge badge-pill badge-danger font-weight-normal">
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
+                {{!-- change button --}}
+                <div class="d-flex justify-content-end align-items-center">
+                  <a href="./restaurants/{{this._id}}/edit" class="btn" style="display: inline"><i class=" fas
+                    fa-edit"></i></a>
+                  {{!-- delete button --}}
+                  <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                    <button type="submit" style="border:0px;background:none;"><i class="fas fa-trash-alt"></i></button>
+                  </form>
+                </div>
               </span>
-
             </div>
           </div>
         </a>
+
         {{/each}}
 
       </div>

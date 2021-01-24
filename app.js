@@ -10,6 +10,7 @@ const Restaurant = require('./models/restaurant')
 
 // require express-handlebars && restaurant-data
 const exphbs = require('express-handlebars')
+const restaurant = require('./models/restaurant')
 
 //setting mongodb connection
 const db = mongoose.connection
@@ -53,26 +54,16 @@ app.post('/restaurants', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
-// app.post('/todos', (req, res) => {
-//   const name = req.body.name
-//   // const todo = New Todo ({name})
-//   // return todo.save()
-//   //     .then(()=> res.redirect('/'))
-//   //     .catch(error => console.log(error))
-//   return Todo.create({ name })
-//     .then(() => res.redirect('/'))
-//     .catch(error => console.log(error))
-// })
-
-// app.post('./restaurants/new')
-
-
 // routes setting - Update
 
 // routes setting - Delete
-
-
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then((restaurant) => restaurant.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
 
 // show-page
 app.get('/restaurants/:id', (req, res) => {
