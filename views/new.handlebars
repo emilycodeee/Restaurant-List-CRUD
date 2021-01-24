@@ -1,0 +1,75 @@
+<div class="card  ">
+  <div class="card-header text-center" style="background:#4592af;font-size:28px;color:white;">
+    Add New Restaurant
+  </div>
+  <div class="card-body" style="padding:10px 20% ">
+    {{!-- 表單開始 --}}
+    <form action="/restaurants" method="POST">
+      <div class="row mx-auto ">
+        {{!-- name --}}
+        <div class="form-group col-sm-8">
+          <label for="name">Restaurant Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱">
+        </div>
+        {{!-- category --}}
+        <div class="form-group col-sm-4 ">
+          <label for="category">Category</label>
+          <select id="category" class="form-control" name="category">
+            <option>選擇餐廳類型</option>
+            <option>美式餐廳</option>
+            <option>日本料理</option>
+            <option>義式餐廳</option>
+            <option>中式餐廳</option>
+            <option>泰式料理</option>
+            <option>中東料理</option>
+            <option>異國風味</option>
+            <option>吃到飽</option>
+            <option>早午餐</option>
+            <option>咖啡</option>
+            <option>酒吧</option>
+          </select>
+        </div>
+        {{!-- address --}}
+        <div class="form-group col-sm-12">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" name="location" placeholder="餐廳地址">
+        </div>
+        {{!-- Phone --}}
+        <div class="form-group col-sm-8">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number">
+        </div>
+        {{!-- rating --}}
+        <div class="form-group col-sm-4">
+          <label for="rating">Rating</label>
+          <input type="text" class="form-control" id="rating" name="rating" placeholder="4.0">
+        </div>
+        {{!-- Image --}}
+        <div class="form-group col-sm-12">
+          <label for="image">Image</label>
+          <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+        </div>
+        {{!-- google_map --}}
+        <div class="form-group col-sm-12">
+          <label for="google_map">Google Map</label>
+          <input type="text" class="form-control" id="google_map" name="google_map" placeholder="Google map URL">
+        </div>
+        {{!-- description --}}
+        <div class="form-group col-sm-12">
+          <label for="description">Description</label>
+          <textarea type="text" class="form-control form-description" id="description" name="description"></textarea>
+        </div>
+        <div class="form-group col-sm-12 mx-auto d-flex justify-content-center">
+          <button type="submit" class="btn btn-info">Submit</button>
+          <a href="/">
+            <button type="button" class="btn btn-warning ml-3">Back</button>
+          </a>
+        </div>
+      </div>
+    </form>
+    {{!-- --}}
+  </div>
+  <div class="card-footer text-center" style="background:#4592af;color:white;">
+    2 days ago
+  </div>
+</div>
