@@ -9,13 +9,13 @@
         {{!-- name --}}
         <div class="form-group col-sm-8">
           <label for="name">Restaurant Name</label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱">
+          <input type="text" class="form-control" id="name" name="name" placeholder="餐廳名稱" required>
         </div>
         {{!-- category --}}
         <div class="form-group col-sm-4 ">
           <label for="category">Category</label>
-          <select id="category" class="form-control" name="category">
-            <option>選擇餐廳類型</option>
+          <select id="category" class="form-control" name="category" required>
+            <option value="">選擇餐廳類型</option>
             <option>美式餐廳</option>
             <option>日本料理</option>
             <option>義式餐廳</option>
@@ -25,8 +25,8 @@
             <option>異國風味</option>
             <option>吃到飽</option>
             <option>早午餐</option>
-            <option>咖啡</option>
-            <option>酒吧</option>
+            <optio>咖啡</option>
+              <option>酒吧</option>
           </select>
         </div>
         {{!-- address --}}
@@ -42,12 +42,13 @@
         {{!-- rating --}}
         <div class="form-group col-sm-4">
           <label for="rating">Rating</label>
-          <input type="text" class="form-control" id="rating" name="rating" placeholder="1~5">
+          <input type="number" class="form-control" id="rating" name="rating" placeholder="1~5" min="1" max="5"
+            step="0.1">
         </div>
         {{!-- Image --}}
         <div class="form-group col-sm-12">
           <label for="image">Image</label>
-          <input type="text" class="form-control" id="image" name="image" placeholder="http://">
+          <input type="text" class="form-control" id="image" name="image" placeholder="http://" required>
         </div>
         {{!-- google_map --}}
         <div class="form-group col-sm-12">
