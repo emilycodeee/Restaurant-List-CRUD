@@ -44,7 +44,7 @@
       <a href="/">
         <button type="button" class="btn btn-warning ml-3">Back</button>
       </a>
-      <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+      <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;">
         <button type="submit" class="btn btn-danger ml-3">Delete</button>
       </form>
     </div>

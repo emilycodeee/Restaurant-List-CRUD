@@ -1,8 +1,8 @@
 # 餐廳清單(Restaurant List)
 
-此專案使用 Node.js + Express + MongoDB 
-打造一個可供使用者蒐集個人喜愛餐廳的餐廳清單
-並提供瀏覽、新增、編輯、搜尋、刪除功能。
+  - 此專案使用 Node.js + Express + MongoDB 
+  - 打造一個可供使用者蒐集個人喜愛餐廳的餐廳清單
+  - 並提供瀏覽、新增、編輯、搜尋、刪除功能。
 
 ## 環境建置與需求 (prerequisites)
 ```
