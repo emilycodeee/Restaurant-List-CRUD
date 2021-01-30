@@ -2,31 +2,16 @@
   <div class="search-bar-outer d-flex justify-content-around">
     <div class="search-bar-inner">
       <form action="/search">
-        <h4 class=" mb-2">尋找餐廳：</h4>
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
-            value="{{keyword}}" aria-describedby="search-button">
+          <input type="text" name="keyword" class="form-control" placeholder="快速搜尋：輸入餐廳、分類"
+            aria-label="Restaurant Name..." value="{{keyword}}" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
         </div>
     </div>
     </form>
-    {{!-- <div class="sort-bar">
-      <form action="/" method="GET">
-        <div class="form-group ">
-          <h4 class=" mb-2">排序：</h4>
-          <select id="sort" class="form-control" name="sort">
-            <option value="">依...排序</option>
-            <option value="name">店名</option>
-            <option value="category">類別</option>
-            <option value="ratting">評分：由高至低</option>
-          </select>
-        </div>
-      </form>
-    </div> --}}
     <div class="sort-bar">
-      <h4 class=" mb-2">選擇排序：</h4>
       <div class="dropdown ">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-expanded="false" style="background: #9b4b4b; border:none;">
@@ -41,12 +26,7 @@
       </div>
     </div>
   </div>
-
-
-
-
 </div>
-
 
 <!-- restaurant list -->
 <div class="container mt-5">
