@@ -11,7 +11,7 @@ const restSchema = new Schema({
   location: String,
   phone: String,
   google_map: String,
-  rating: String,
+  rating: Number,
   description: String
 })
 module.exports = mongoose.model('Restaurant', restSchema)
