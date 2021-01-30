@@ -1,7 +1,6 @@
 <div class="container search-bar">
-  <div class="search-bar-outer">
+  <div class="search-bar-outer d-flex justify-content-around">
     <div class="search-bar-inner">
-
       <form action="/search">
         <h4 class=" mb-2">尋找餐廳：</h4>
         <div class="input-group">
@@ -11,10 +10,40 @@
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
         </div>
+    </div>
+    </form>
+    {{!-- <div class="sort-bar">
+      <form action="/" method="GET">
+        <div class="form-group ">
+          <h4 class=" mb-2">排序：</h4>
+          <select id="sort" class="form-control" name="sort">
+            <option value="">依...排序</option>
+            <option value="name">店名</option>
+            <option value="category">類別</option>
+            <option value="ratting">評分：由高至低</option>
+          </select>
+        </div>
       </form>
-
+    </div> --}}
+    <div class="sort-bar">
+      <h4 class=" mb-2">選擇排序：</h4>
+      <div class="dropdown ">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-expanded="false" style="background: #9b4b4b; border:none;">
+          依...排序
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="/sort/name">店名</a></li>
+          <li><a class="dropdown-item" href="/sort/category">類別</a></li>
+          <li><a class="dropdown-item" href="/sort/rating">評分：由高至低</a></li>
+          <li><a class="dropdown-item" href="/sort/creation">新增順序：由新至舊</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+
+
+
 
 </div>
 
@@ -28,25 +57,32 @@
         {{#each restaurants}}
 
         <a href="/restaurants/{{this._id}}" class="text-secondary">
+
+
           <div class="card mb-3">
             <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
             <div class="card-body p-3">
               <h6 class="card-title mb-1">{{this.name}}</h6>
 
               <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
+                <i class="fas fa-utensils pr-2 fa-lg"></i> {{this.category}}
               </div>
 
               <span class="badge badge-pill badge-danger font-weight-normal">
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
-                {{!-- change button --}}
+
+
+                {{!-- detail & edit button --}}
                 <div class="d-flex justify-content-end align-items-center">
-                  <a href="./restaurants/{{this._id}}/edit" class="btn" style="display: inline"><i class=" fas
-                    fa-edit"></i></a>
+                  <a href="/restaurants/{{this._id}}" class="btn" style="display: inline"><i
+                      class="fas fa-info-circle fa-lg"></i></a>
+                  <a href="/restaurants/{{this._id}}/edit" class="btn" style="display: inline"><i class=" fas
+                    fa-edit fa-lg"></i></a>
                   {{!-- delete button --}}
-                  <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-                    <button type="submit" style="border:0px;background:none;"><i class="fas fa-trash-alt"></i></button>
+                  <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit" style="border:0px;background:none;"><i
+                        class="fas fa-trash-alt fa-lg"></i></button>
                   </form>
                 </div>
               </span>

@@ -1,5 +1,5 @@
 const db = require('../../config/mongoose')
-const Restaurant = require('./models/restaurant')
+const Restaurant = require('../restaurant')
 db.once('open', () => {
   Restaurant.create({
     "id": 1,
